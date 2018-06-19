@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:RAGI;assembly=ivy"
+             x:Class="ivy.Views.login">
+    <ContentPage.Content>
+        <StackLayout Spacing="30" Padding="20"
+                         VerticalOptions="StartAndExpand">
+
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140" /> <!--0-->
+                    <RowDefinition Height="30" /> <!--1-->
+                    <RowDefinition Height="40" /> <!--2-->
+                    <RowDefinition Height="40" /> <!--3-->
+                    <RowDefinition Height="20" /> <!--4-->
+                    <RowDefinition Height="60" /> <!--5-->
+                    <RowDefinition Height="60" /> <!--6-->
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Image Source="login_usuario.png" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"  />
+
+
+                <Label x:Name="lblResult"  
+                               Text="{Binding Result}"
+                           XAlign="Center"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           TextColor="#B22222"
+                           Grid.Row="1" Grid.Column="0"
+                            />
+
+
+                <custom:RAGIEntry x:Name="email" Placeholder="email" 
+                           Text="{Binding Username}"
+                           Grid.Row="2" Grid.Column="0"
+                           />
+
+
+                <custom:RAGIEntry x:Name="Password"  Placeholder="Password"
+                           Text="{Binding Password}"
+                           IsPassword="true"
+                           Grid.Row="3" Grid.Column="0"
+                           />
+
+                
+
+                <Button Text="Entrar" TextColor="White"
+                           BackgroundColor="#00008B"
+                           Clicked="Button_OnClicked" 
+                           Grid.Row="5" Grid.Column="0"                    
+                           />
+
+                <Button Text="Inscrever" TextColor="White"
+                            BackgroundColor="#00008B"
+                           Clicked="ButtonInscrever_OnClicked" 
+                           Grid.Row="6" Grid.Column="0" 
+                           BorderRadius="4"
+                           BorderWidth="2"
+                        />
+
+
+            </Grid>
+
+            
+        </StackLayout>
+
+
+
+    </ContentPage.Content>
+</ContentPage>
